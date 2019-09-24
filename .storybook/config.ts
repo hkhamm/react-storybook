@@ -1,8 +1,8 @@
 import { configure, addDecorator } from "@storybook/react"
+// @ts-ignore
 import { withInfo } from "@storybook/addon-info"
 
 // automatically import all files ending in *.stories.tsx
-// @ts-ignore
 const req = require.context("../src", true, /.stories.tsx$/)
 
 function loadStories() {
