@@ -1,36 +1,63 @@
 {
-  "name": "react-storybook",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.5",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2",
-    "typescript": "3.6.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "react-storybook",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.4.3",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.6.2",
+        "@storybook/addon-actions": "^5.2.1",
+        "@storybook/addon-links": "^5.2.1",
+        "@storybook/addons": "^5.2.1",
+        "@storybook/react": "^5.2.1",
+        "@types/jest": "24.0.18",
+        "@types/node": "12.7.5",
+        "@types/react": "16.9.2",
+        "@types/react-dom": "16.9.0",
+        "@types/storybook__react": "^4.0.2",
+        "babel-loader": "^8.0.6",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "husky": "^3.0.5",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^1.11.1",
+        "react-scripts": "3.1.2",
+        "typescript": "3.6.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "lint": "npx eslint --fix \"src/**/*.{js,ts,jsx,tsx}\"",
+        "storybook": "start-storybook -p 6006",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "build-storybook": "build-storybook"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "plugin:prettier/recommended"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged",
+            "pre-push": "yarn lint"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
