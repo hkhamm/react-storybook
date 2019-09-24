@@ -1,5 +1,7 @@
 import React from "react"
 import Button from "./Button"
+import { text } from "@storybook/addon-knobs"
+import { action } from "@storybook/addon-actions"
 
 export default {
     title: "Button",
@@ -8,10 +10,10 @@ export default {
     }
 }
 
-export const withText = () => <Button>Hello Button</Button>
+export const withText = () => <Button onClick={action("onClick")}>{text("Label", "Hello Button")}</Button>
 
 export const withEmoji = () => (
-    <Button>
+    <Button onClick={action("onClick")}>
         <span role="img" aria-label="so cool">
             😀 😎 👍 💯
         </span>
