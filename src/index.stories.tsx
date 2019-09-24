@@ -1,24 +1,17 @@
 import React from "react"
+import Button from "./Button"
 import { storiesOf } from "@storybook/react"
 
-export default { title: "Button" }
-
-export const withText = () => <button>Hello Button</button>
+export const withText = () => <Button>Hello Button</Button>
 
 export const withEmoji = () => (
-    <button>
+    <Button>
         <span role="img" aria-label="so cool">
             😀 😎 👍 💯
         </span>
-    </button>
+    </Button>
 )
 
-storiesOf("button", module)
-    .add("with text", () => <button>Hello Button</button>)
-    .add("with emoji", () => (
-        <button>
-            <span role="img" aria-label="so cool">
-                😀 😎 👍 💯
-            </span>
-        </button>
-    ))
+storiesOf("Button", module)
+    .add("with text", withText, { info: { inline: true } })
+    .add("with emoji", withEmoji, { info: { inline: true } })
