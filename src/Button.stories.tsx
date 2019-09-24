@@ -10,10 +10,14 @@ export default {
     }
 }
 
-export const withText = () => <Button onClick={action("onClick")}>{text("Label", "Hello Button")}</Button>
+export const withText = () => (
+    <Button color={text("Color", "blue")} onClick={action("onClick")}>
+        {text("Label", "Hello Button")}
+    </Button>
+)
 
 export const withEmoji = () => (
-    <Button onClick={action("onClick")}>
+    <Button color={text("Color", "blue")} onClick={action("onClick")}>
         <span role="img" aria-label="so cool">
             😀 😎 👍 💯
         </span>
