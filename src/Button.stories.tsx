@@ -1,6 +1,12 @@
 import React from "react"
 import Button from "./Button"
-import { storiesOf } from "@storybook/react"
+
+export default {
+    title: "Button",
+    parameters: {
+        info: { inline: true }
+    }
+}
 
 export const withText = () => <Button>Hello Button</Button>
 
@@ -11,7 +17,3 @@ export const withEmoji = () => (
         </span>
     </Button>
 )
-
-storiesOf("Button", module)
-    .add("with text", withText, { info: { inline: true } })
-    .add("with emoji", withEmoji, { info: { inline: true } })

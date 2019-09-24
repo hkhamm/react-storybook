@@ -17,7 +17,17 @@ const useStyles = makeStyles({
 })
 
 interface Props {
+    /**
+     * Called when button is clicked
+     *
+     * @default none
+     */
     onClick?: () => void
+    /**
+     *  Sets the button's background color
+     *
+     * @default "blue"
+     */
     color?: string
 }
 
