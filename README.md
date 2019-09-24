@@ -4,12 +4,12 @@ An example of using Storybook with React.
 
 ## Run Storybook
 
-```$bash
+```bash
 yarn storybook
 ```
 
 ## Run React app
 
-```$bash
+```bash
 yarn start
 ```
